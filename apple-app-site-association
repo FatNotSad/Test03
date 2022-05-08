@@ -5,7 +5,12 @@
             {
                 "appID":"Y96BUR5BY6.com.xigu.iossdk",
                 "paths": [ "/app/*"]
+            },
+            {
+                "appID": "XUATSMX576.com.chance.appty",
+                "paths": [ "/app/*","/apple-app-site-association"  ]
             }
+            
         ]
     }
 }
