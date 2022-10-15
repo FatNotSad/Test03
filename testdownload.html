@@ -1,0 +1,43 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>It Works</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+        function adClick(ad, site) {
+         window.open(ad);
+         window.location = site;
+        }
+        function openApp(){
+             var loadDateTime = new Date();
+                    // window.location = "xigudownload://";//schema链接或者universal link
+                    window.location = "xigudown://";//schema链接或者universal link
+                    window.setTimeout(function() { //如果没有安装app,便会执行setTimeout跳转下载页
+                        var timeOutDateTime = new Date();
+                        if (timeOutDateTime - loadDateTime < 5000) {
+                            // window.location = "itms-services://?action=download-manifest&url=https://app.shangplay.com/upload/plistgame/game97.plist"; //ios下载地址
+                            window.open("itms-services://?action=download-manifest&url=https://app.shangplay.com/upload/plistgame/game97.plist");
+                        } else {
+                            window.close();
+                        }
+                    }, 500);
+        }
+        </script>
+
+    <p>----</p>
+    <p>----</p>
+    <a href="javascript:adClick('http://www.163.com/','http://www.phpstudy.net/');">
+    一个链接打开两个链接地址</a>
+    <p>----</p>
+    <a href="itms-services://?action=download-manifest&url=https://code.aliyun.com/1099674042/csz_01/raw/master/manifest.plist">点击开始安装App</a>
+        <button onclick="openApp()">点这里</button>
+        
+    </body>
+
+    </html>
